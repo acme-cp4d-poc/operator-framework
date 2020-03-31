@@ -73,15 +73,15 @@ Checkpoint: Install SDK and sdk version
 ![Operator list](images/operator-sdk-version.png)
 
 #### 2. Create new Go Project for operator using SDK
-Precheck: If you don't have go compiler, download and install <a href="https://golang.org/doc/install" target="_blank"> Go compiler </a>. Then create new Go-base Project
+Precheck: If you don't have go compiler, download and install <a href="https://golang.org/doc/install" target="_blank"> Go compiler </a>. Then create new Go-base Project for new operator - memory cache
 
 Checkpoint: steps
 ![Operator list](images/new-operator-go-project.png)
 
 #### 3. view new Go Project
-Create new Go-base Project for new operator - memory cache
+Once create new project completed, check the status
 
-Checkpoint: check status
+Checkpoint: check project status
 ![Operator list](images/verify-operator-project-created.png)
 
 #### 4. Add Custom Resource Definition
