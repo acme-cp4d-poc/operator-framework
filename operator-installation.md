@@ -41,7 +41,7 @@ Checkpoint: instance
 #### 5. Verify the pod status
 Ensure deployment is error-free, and view the pod status 
 
-Checkpoint: deployment status
+Checkpoint: pod status
 ![Operator list](images/operator-pod-status.png)
 
 #### 6. View the all installed operators
@@ -107,6 +107,7 @@ Controller description
 
 Checkpoint: create a new controller and view the deployment yaml
 ![Operator list](images/add-new-controller.png)
+
 ![Operator list](images/view-new-controller-yaml-list.png)
 
 #### 8. Build and run operator
@@ -133,7 +134,9 @@ sed -i "" 's|REPLACE_IMAGE|quay.io/rcondondev/memcached-operator:v0.0.1|g' deplo
 
 > Push build image to quay.io registry
 Checkpoint: check command result and image on quay.io dashboard
+
 ![Operator list](images/push-image-quayio.png)
+
 ![Operator list](images/check-image-push-status.png)
 
 > Deploy
@@ -147,7 +150,7 @@ Checkpoint: view cli command and check result
 
 > Using Openshift web console
 Checkpoint: view cli command and check result
-![Operator list](images/view-operator-console.png)
+![Operator list](images/view-deployment-console.png)
 
 #### 10. View operator pod status
 Make sure the new installed operator pod is up and running
