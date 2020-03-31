@@ -48,12 +48,12 @@ Checkpoint: deployment status
 At this point, the installed operators should be ready to use
 
 Checkpoint: deployment status
-![Operator list](images/view-installed-operators.png)
+![Operator list](images/view-installed-operators-console.png)
 
 #### 7. View pod status of installed operators
 Make sure the pods are up and running
 
-Checkpoint: deployment status
+Checkpoint: pod status
 ![Operator list](images/view-operator-pods.png)
 
 ### Install Operator in Openshift 4 via CLI
@@ -69,59 +69,47 @@ brew install operator-sdk
 ```
 Checkpoint: Install SDK and sdk version
 ![Operator list](images/install-operator-sdk.png)
+
 ![Operator list](images/operator-sdk-version.png)
 
 #### 2. Create new Go Project for operator using SDK
-Precheck: If you don't have go compiler, download and install with default setting.
-
-Create new Go-base Project
+Precheck: If you don't have go compiler, download and install <a href="https://golang.org/doc/install" target="_blank"> Go compiler </a>. Then create new Go-base Project
 
 Checkpoint: steps
 ![Operator list](images/new-operator-go-project.png)
 
-#### 3. Create new Go Project for operator using SDK
-Precheck: If you don't have go compiler, download and install <a href="https://golang.org/doc/install" target="_blank"> Go compiler </a>.
-
-Create new Go-base Project
-
-Checkpoint: steps
-![Operator list](images/new-operator-go-project.png)
-
-#### 4. Create new Go Project for operator using SDK
-Precheck: If you don't have go compiler, download and install <a href="https://golang.org/doc/install" target="_blank"> Go compiler </a>.
-
+#### 3. view new Go Project
 Create new Go-base Project for new operator - memory cache
 
-Checkpoint: create steps and check result
-![Operator list](images/new-operator-go-project.png)
-![Operator list](images/verified-operator-project-created.png)
+Checkpoint: check status
+![Operator list](images/verify-operator-project-created.png)
 
-#### 5. Add Custom Resource Definition
+#### 4. Add Custom Resource Definition
 Use the CLI to add a new CRD Api
 
 Checkpoint: view cli command and check result
 ![Operator list](images/add-crd-api.png)
 
-#### 6. Add spec and status to Custom Resource Definition
+#### 5. Add spec and status to Custom Resource Definition
 The spec and status are for operator deployment.
 
 Checkpoint: view cli command and check result
 ![Operator list](images/add-spec-status-crd.png)
 
-#### 7. Add spec and status to Custom Resource Definition
+#### 6. Add spec and status to Custom Resource Definition
 Since we modify the go source code (memcached_types.go), will need to run sddk to update the resource type.
 
 Checkpoint: view cli command and check result
 ![Operator list](images/update-generated-code.png)
 
-#### 8. Add a new Controller
+#### 7. Add a new Controller
 Controller description
 
 Checkpoint: create a new controller and view the deployment yaml
 ![Operator list](images/add-new-controller.png)
 ![Operator list](images/view-new-controller-yaml-list.png)
 
-#### 9. Build and run operator
+#### 8. Build and run operator
 We will do the deployment inside a Openshift cluster
 > First, register CRD with the Kubernetes apiserver using SDK CLI
 ```
@@ -152,7 +140,7 @@ Checkpoint: check command result and image on quay.io dashboard
 Checkpoint: view cli command and check result
 ![Operator list](images/deploy-operator.png)
 
-#### 10. View deployment status
+#### 9. View deployment status
 > Using CLI
 Checkpoint: view cli command and check result
 ![Operator list](images/view-operator-deployment.png)
@@ -161,7 +149,7 @@ Checkpoint: view cli command and check result
 Checkpoint: view cli command and check result
 ![Operator list](images/view-operator-console.png)
 
-#### 11. View operator pod status
+#### 10. View operator pod status
 Make sure the new installed operator pod is up and running
 Checkpoint: view pod status on console
 ![Operator list](images/view-pod-status-console.png)
