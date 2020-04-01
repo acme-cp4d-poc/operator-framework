@@ -50,7 +50,7 @@ At this point, the installed operators should be ready to use
 Checkpoint: deployment status
 ![Operator list](images/view-installed-operators-console.png)
 
-#### 7. View pod status of installed operators
+#### 7. View pod status of all installed operators
 Make sure the pods are up and running
 
 Checkpoint: pod status
@@ -96,8 +96,8 @@ The spec and status are for operator deployment.
 Checkpoint: view cli command and check result
 ![Operator list](images/add-spec-status-crd.png)
 
-#### 6. Add spec and status to Custom Resource Definition
-Since we modify the go source code (memcached_types.go), will need to run sddk to update the resource type.
+#### 6. Update resource type using sdk cli
+Since we modify the go source code (memcached_types.go), will need to run sdk to update the resource type.
 
 Checkpoint: view cli command and check result
 ![Operator list](images/update-generated-code.png)
@@ -137,9 +137,11 @@ Checkpoint: check command result and image on quay.io dashboard
 
 ![Operator list](images/push-image-quayio.png)
 
+View image on quay.io dashboard
 ![Operator list](images/check-image-push-status.png)
 
 > Deploy
+
 Checkpoint: view cli command and check result
 ![Operator list](images/deploy-operator.png)
 
