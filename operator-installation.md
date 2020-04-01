@@ -11,7 +11,7 @@ After completing this tutorial you should be able to
 - How to use Openshift quay.io registry
 - Do installation troubleshooting
 
-### Install Operator in Openshift 4 console
+## Install Operator in Openshift 4 console
 Since Openshift4.1, red hat introduced the Operator concept. A list of pre-pacakaged operators can be discovered in OperatorHub.
 
 #### 1. Login to Openshift with admin role
@@ -56,7 +56,7 @@ Make sure the pods are up and running
 Checkpoint: pod status
 ![Operator list](images/view-operator-pods.png)
 
-### Install Operator in Openshift 4 via CLI
+## Install Operator in Openshift 4 via CLI
 Althrough there is a list operators are exiating in the OperatorHUb, however there are some crutial operators are not avialble on OperatorHUb. In this case, install operator via CLI is an option.
 You can visit <a href="https://docs.openshift.com/container-platform/4.2/operators/olm-what-operators-are.html" target="_blank">Openshift 4 doc </a> for more details.
 
@@ -103,7 +103,7 @@ Checkpoint: view cli command and check result
 ![Operator list](images/update-generated-code.png)
 
 #### 7. Add a new Controller
-Controller description
+Controller is Operator run time library. When wee initial Go-base project, the main program for the operator cmd/manager/main.go initializes and runs the <a href="https://godoc.org/github.com/kubernetes-sigs/controller-runtime/pkg/manager#Manager" target="_blank"> Manager </a> interface. The Manager restricts the namespace so that controllers can  watch for resources allocations.
 
 Checkpoint: create a new controller and view the deployment yaml
 ![Operator list](images/add-new-controller.png)
@@ -160,4 +160,36 @@ Checkpoint: view pod status on console
 ![Operator list](images/view-pod-status-console.png)
 
 ### Troubleshooting
-Troubleshooting
+Listing all the errors encountered during the Operator installation with CLI; and fix for each error
+
+#### 1. Deploy Custom Resource Definition error
+
+Error: 
+![Operator list](images/deploy-crds-error.png)
+Fix: deploy file name is incoorect or use the wrong one.
+
+#### 2. Run Podman error
+For Mac user only.
+
+![Operator list](images/podman-accessed-error.png)
+Fix: Open System Preference => Security and Privacy => General => Allow
+
+#### 3. Update PEPLACE_IMAGE value for yaml using sed command
+For Mac user only.
+
+![Operator list](images/sed-i-error-mac.png)
+Fix: using command below instead; or using preferred editor (i.e vi editor)
+```
+sed -i "" 's|REPLACE_IMAGE|quay.io/rcondondev/memcached-operator:v0.0.1|g' deploy/operator.yaml
+```
+
+#### 4. Parse yaml to json error
+
+![Operator list](images/parse-json-yaml-error.png)
+Fix: check if any keypad tab in the yaml file; and remove them.
+
+#### 2. Cannot use Podman to push build image 
+For Mac user only. Podman works well in ubunto/linux but not in mac.
+
+![Operator list](images/podman-error-mac.png)
+Fix: see this step "Push build image to quay.io registry" 
