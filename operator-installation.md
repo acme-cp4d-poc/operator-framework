@@ -61,7 +61,7 @@ Althrough there is a list operators are exiating in the OperatorHUb, however the
 You can visit <a href="https://docs.openshift.com/container-platform/4.2/operators/olm-what-operators-are.html" target="_blank">Openshift 4 doc </a> for more details.
 
 #### 1. Preparation Operator SDK
-Installl Operator SDK CLI. View <a href="https://docs.openshift.com/container-platform/4.3/operators/operator_sdk/osdk-getting-started.html" target="_blank">Openshift 4 doc </a> for more details.
+Installl Operator SDK CLI. View <a href="https://docs.openshift.com/container-platform/4.3/operators/operator_sdk/osdk-getting-started.html" target="_blank">Openshift 4 doc </a>for more details.
 
 Install SDK using brew (Mac user)
 ```
@@ -112,7 +112,7 @@ Checkpoint: create a new controller and view the deployment yaml
 
 #### 8. Build and run operator
 We will do the deployment inside a Openshift cluster
-> First, register CRD with the Kubernetes apiserver using SDK CLI
+> First, register CRD with the Kubernetes api server using SDK CLI
 ```
 oc create -f deploy/crds/cache.example.com_memcacheds_crd.yaml
 ```
@@ -163,7 +163,6 @@ Checkpoint: view pod status on console
 Listing all the errors encountered during the Operator installation with CLI; and fix for each error
 
 #### 1. Deploy Custom Resource Definition error
-
 Error: 
 ![Operator list](images/deploy-crds-error.png)
 Fix: deploy file name is incoorect or use the wrong one.
@@ -178,18 +177,20 @@ Fix: Open System Preference => Security and Privacy => General => Allow
 For Mac user only.
 
 ![Operator list](images/sed-i-error-mac.png)
+
 Fix: using command below instead; or using preferred editor (i.e vi editor)
+
 ```
 sed -i "" 's|REPLACE_IMAGE|quay.io/rcondondev/memcached-operator:v0.0.1|g' deploy/operator.yaml
 ```
 
 #### 4. Parse yaml to json error
-
 ![Operator list](images/parse-json-yaml-error.png)
 Fix: check if any keypad tab in the yaml file; and remove them.
 
-#### 2. Cannot use Podman to push build image 
+#### 5. Cannot use Podman to push build image 
 For Mac user only. Podman works well in ubunto/linux but not in mac.
 
 ![Operator list](images/podman-error-mac.png)
+
 Fix: see this step "Push build image to quay.io registry" 
